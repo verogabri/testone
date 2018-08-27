@@ -4,7 +4,7 @@ progetto di test basico
 nothig to see, just some pratice with git bash
 
 
-### API
+## API
 The API will be listening from this URL `http://localhost:8889/api.php`.
 
 The API has two endpoints:
