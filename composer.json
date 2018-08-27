@@ -1,0 +1,30 @@
+{
+	"name" : "verogabri/slimme",
+	"description" : "\"A slim demo project\"",
+	"type" : "project",
+
+	"require" : {
+		"slim/slim" : "^3.10",
+		"monolog/monolog" : "^1.23",
+		"slim/twig-view": "dev-master",
+		"flexsounds/slim-symfony-di-container": "dev-master",
+		"symfony/config": "^4.2@dev",
+		"symfony/yaml": "^4.2@dev"
+	},
+
+	"license" : "beerware",
+
+	"authors" : [{
+			"name" : "\"verogabri",
+			"email" : "gabriele.peressutti@gmail.com"
+		}
+	],
+
+	"minimum-stability" : "dev",
+
+	"autoload" : {
+		"psr-4": {
+			"Demo\\" : "src"
+		}
+	}
+}
