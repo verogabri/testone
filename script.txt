@@ -1,3 +1,28 @@
+<form id="mailform" action="/indx.php?" enctype="multipart/form-data" method="post">
+<p class="lead mg-b-s">Inviaci una Richiesta</p>
+<div class="col-sm-6 form-group pd-no"><label for="zi_nome_cognome">Nome Cognome*</label> <input id="zi_nome_cognome" class="form-control" name="nome_cognome" required="" type="text" placeholder="Nome e Cognome" /></div>
+<div class="col-sm-6 form-group pd-no pd-l-s"><label for="zi_ragione_sociale">Azienda*</label> <input id="zi_ragione_sociale" class="form-control" name="ragione_sociale" required="" type="text" placeholder="Ragione Sociale" /></div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-sm-6 form-group pd-no"><label for="zi_telefono">Telefono*</label> <input id="zi_telefono" class="form-control" name="telefono" required="" type="tel" placeholder="Telefono" /></div>
+<div class="col-sm-6 form-group pd-no pd-l-s"><label for="zi_cellulare">Cellulare</label> <input id="zi_cellulare" class="form-control" name="cellulare" type="tel" placeholder="Cellulare" /></div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-sm-6 form-group pd-no"><label for="zi_email">Email*</label> <input id="zi_email" class="form-control" name="email" required="" type="email" placeholder="Email" /></div>
+<div class="col-sm-6 form-group pd-no pd-l-s"><label for="zi_paese">Paese*</label><select id="zi_paese" class="form-control" name="paese" required="">
+<option>Italia</option>
+<option>Altro</option>
+</select></div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-sm-6 form-group pd-no"><label for="zi_indirizzo">Indirizzo*</label><input id="zi_indirizzo" class="form-control" name="indirizzo" required="" type="text" placeholder="Via/Localit&agrave;" /></div>
+<div class="col-sm-6 form-group pd-no pd-l-s"><label for="zi_citta">Citt&agrave;*</label><input id="zi_citta" class="form-control" name="citta" required="" type="text" placeholder="Citt&agrave;/Paese" /></div>
+<div class="clearfix">&nbsp;</div>
+<div class="form-group"><label for="zi_messaggio">Messaggio*</label> <textarea id="zi_messaggio" class="form-control" name="messaggio" required=""></textarea></div>
+<div class="col-xs-12 form-group">
+<div class="checkbox"><label> <input id="zi_privacy_flg" name="privacy_flg" type="checkbox" /> Accetto i termini dell'Informativa Privacy <a href="https://www.privacylab.it/getDoc.php?idDoc=51&amp;output=pdf&amp;idTarget=357017" target="_blank">(Leggi)</a> </label></div>
+</div>
+<input name="p" type="hidden" value="FormMail" /> <input name="o" type="hidden" value="send" /> <input name="z" type="hidden" value="000961" /> <input name="zi_subject" type="hidden" value="Form contatti" /> <input name="zi_template" type="hidden" value="form_mail" /> <input name="zi_fromname" type="hidden" value="Plasson it" /> <input name="zi_sendmail" type="hidden" value="FORM_MAIL_SEND" /> <input name="zi_address_to" type="hidden" value="" /> <input name="zi_address_cc" type="hidden" value="" /> <input id="zi_submit" class="btn btn-primary pull-right mg-t-m" disabled="disabled" name="zi_submit" type="submit" value="INVIA RICHIESTA" /></form>
+<div class="clearfix mg-b-l">&nbsp;</div>
+
+
 <script>
 $(document).ready(function(){
 
