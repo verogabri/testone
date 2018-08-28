@@ -1,0 +1,107 @@
+<script>
+$(document).ready(function(){
+
+	// click sul flag della privacy
+	$('#zi_privacy_flg').on('change',function(){
+		if($(this).prop("checked")) {
+			console.log('is checked');
+			$('#zi_submit').prop('disabled',false);
+		} else {
+			console.log('NOT is checked');
+			$('#zi_submit').prop('disabled',true);
+		}
+	});
+
+	// invio del form
+	$('#mailform').on('submit',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		
+		var form = $(this);
+		var dd={};
+		var errore = false;
+		
+		var actionButton = form.find("input[type='submit']");
+		actionButton.prop('disabled',true);
+
+		// carica tutti gli input
+		var _inputs = form.find("input");
+		_inputs.each(function(idx){
+			var item = $(this);
+			var name = item.attr('name');
+			dd[name] = item.val();
+
+		});
+
+		// carica tutti i textarea
+		var _inputs = form.find("textarea");
+		_inputs.each(function(idx){
+			var item = $(this);
+			var name = item.attr('name');
+			dd[name] = item.val();
+
+		});
+
+		// carica tutti i select
+		var _selects = form.find("select");
+		_selects.each(function(idx){
+			var item = $(this);
+			var name = item.attr('name');
+			dd[name] = item.val();
+
+		});
+
+		// TODO caricare i checkbox
+		var _checkbox = form.find("input[type='checkbox']");
+		_checkbox.each(function(idx){
+			var item = $(this);
+			var name = item.attr('name');
+			if(item.prop('checked')) dd[name] = "OK";
+
+		});
+
+		// TODO caricare gli allegati 
+		
+		dd.response = "json";
+		var _link = "?p="+dd.p+"&o="+dd.o+"&z="+dd.z;
+
+		if(!errore){
+			
+			$.ajax({
+				url: _link,
+				type: "POST",
+				data: dd,
+				//contentType: true,
+				cache: false,
+				//processData:false,
+				dataType: 'json',
+				success: function(result) {
+				
+					// OVERLAY_LOADING.hide();
+					// console.log('success:result');
+					// console.log(result);
+
+					if(typeof result.result != "undefined"){
+
+						if(result.result) {
+							bootbox.alert("Richiesta Inviata correttamente. Grazie",function(){
+    							window.location.href = "https://www.plasson.it/";
+    						});
+						}
+					} else {
+						if(result.result) bootbox.alert("Non è stato possibile inviare la richiesta");
+					}
+					
+					actionButton.removeAttr('disabled');				
+				
+				}
+			});
+
+		} 
+
+		return false;
+	});
+
+
+});
+</script>
